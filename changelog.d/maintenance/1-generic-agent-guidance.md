@@ -1,0 +1,1 @@
+- **docs:** rename substantive AI contributor guidance to `AGENTS.md`, update localized mirrors and active backlinks, and express portable instructions in provider-neutral capability terms.
