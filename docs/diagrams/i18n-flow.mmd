@@ -2,7 +2,7 @@
 %% Reflects: scripts/i18n/* and docs/i18n/<locale>/*.md mirror layout
 %% v3.8.0
 flowchart LR
-  Src["Source MDs<br/>(CLAUDE.md, docs/**/*.md)"] --> Hash["sha256 hash"]
+  Src["Source MDs<br/>(AGENTS.md, docs/**/*.md)"] --> Hash["sha256 hash"]
   Hash --> State[".i18n-state.json"]
   State -->|diff| Dirty["Mark source dirty"]
   Dirty --> Loop{"For each locale<br/>(42 langs)"}

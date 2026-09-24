@@ -99,7 +99,7 @@ v3.8.0 平台的权威版本控制 Mermaid 源文件位于
 ![三层容灾模型](../diagrams/exported/resilience-3layers.svg)
 
 > 源文件：[diagrams/resilience-3layers.mmd](../diagrams/resilience-3layers.mmd) — 另见
-> [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) 和 `CLAUDE.md` 中的容灾参考。
+> [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) 和 `AGENTS.md` 中的容灾参考。
 
 ## 范围与边界
 

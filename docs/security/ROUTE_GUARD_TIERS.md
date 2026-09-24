@@ -207,7 +207,7 @@ expired DB doesn't silently downgrade to "deny".
    `src/server/authz/routeGuard.ts`
 2. Add a test in `tests/unit/authz/routeGuard.test.ts` asserting that
    `isLocalOnlyPath()` returns true for the new prefix
-3. **Never skip this step** — see Hard Rule #15 in `CLAUDE.md`
+3. **Never skip this step** — see Hard Rule #15 in `AGENTS.md`
 4. Decide: does this route ALSO belong in `LOCAL_ONLY_MANAGE_SCOPE_BYPASS_PREFIXES`?
    Default answer is **no**. Only opt-in when the route is safe to expose to a
    manage-scope holder (i.e. does NOT spawn arbitrary user-controlled code).

@@ -62,7 +62,7 @@ OmniRoute/
 ├── config/               Przykłady konfiguracji runtime
 ├── images/               Zasoby marketingowe / zrzuty ekranu
 ├── _ideia/, _references/, _mono_repo/, _tasks/   Wewnętrzne notatki / planowanie (nie wydawane)
-├── CLAUDE.md             Reguły repo dla Claude Code
+├── AGENTS.md             Reguły repo dla Claude Code
 ├── AGENTS.md             Głębsza referencja architektury dla agentów
 ├── package.json          v3.8.0, korzeń workspace
 └── tsconfig.json         Aliasy ścieżek + główne opcje kompilatora
@@ -725,7 +725,7 @@ Client request
 | Model lockout            | Provider + connection + model | `open-sse/services/accountFallback.ts`, utrwalany w `domain_lockout_state`                                        |
 
 Zob. [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) oraz dedykowaną sekcję w
-[CLAUDE.md](../../CLAUDE.md).
+[AGENTS.md](../../AGENTS.md).
 
 ---
 
@@ -821,7 +821,7 @@ Zob. [A2A-SERVER.md § Adding a New Skill](../frameworks/A2A-SERVER.md). Skille 
 
 ---
 
-## 12. Twarde reguły (z CLAUDE.md)
+## 12. Twarde reguły (z AGENTS.md)
 
 1. Nigdy nie commituj sekretów ani poświadczeń.
 2. Nigdy nie dodawaj logiki do `src/lib/localDb.ts`.
@@ -851,6 +851,6 @@ Zob. [A2A-SERVER.md § Adding a New Skill](../frameworks/A2A-SERVER.md). Skille 
 - [ELECTRON_GUIDE.md](../guides/ELECTRON_GUIDE.md) (jeśli obecny), [DOCKER_GUIDE.md](../guides/DOCKER_GUIDE.md), [FLY_IO_DEPLOYMENT_GUIDE.md](../ops/FLY_IO_DEPLOYMENT_GUIDE.md), [VM_DEPLOYMENT_GUIDE.md](../ops/VM_DEPLOYMENT_GUIDE.md), [TERMUX_GUIDE.md](../guides/TERMUX_GUIDE.md), [PWA_GUIDE.md](../guides/PWA_GUIDE.md) — cele wdrożenia.
 - [TROUBLESHOOTING.md](../guides/TROUBLESHOOTING.md) — typowe problemy operacyjne.
 - [CONTRIBUTING.md](../../CONTRIBUTING.md) — workflow kontrybutora.
-- [CLAUDE.md](../../CLAUDE.md) — reguły repo dla Claude Code (źródło prawdy
+- [AGENTS.md](../../AGENTS.md) — reguły repo dla Claude Code (źródło prawdy
   dla wielu powyższych konwencji).
 - [AGENTS.md](../../AGENTS.md) — głębsza referencja architektury używana przez agentów.

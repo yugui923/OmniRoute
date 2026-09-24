@@ -1,10 +1,9 @@
 # OmniRoute agent guide
 
 > **Single source of truth.** This file holds ALL project rules, conventions, architecture notes
-> and Hard Rules for every AI assistant working this repository (Claude Code, Gemini, Codex,
-> Copilot, and any other agent). `CLAUDE.md` and `GEMINI.md` only add assistant-specific deltas
-> and point back here. When a rule needs to change, change it HERE — never re-fork it into an
-> assistant-specific file.
+> and Hard Rules for every AI coding agent working in this repository. `GEMINI.md` only adds
+> harness-specific deltas and points back here. When a rule needs to change, change it HERE —
+> never re-fork it into a harness-specific file.
 
 ## Quick Start
 
@@ -270,7 +269,7 @@ Read the nearest `AGENTS.md` and the linked deep-dive before making a non-trivia
 
 - Configuration files (`vitest.config.ts`, `next.config.mjs`, `eslint.config.mjs`, `tsconfig*.json`, `playwright.config.ts`, `prettier.config.mjs`, `postcss.config.mjs`, `sonar-project.properties`, `fly.toml`, `docker-compose*.yml`, `Dockerfile`)
 - Dependency files (`package.json`, `package-lock.json`)
-- Documentation files (`README.md`, `CHANGELOG.md`, `ROADMAP.md`, `LICENSE`, `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `llm.txt`)
+- Documentation files (`README.md`, `CHANGELOG.md`, `ROADMAP.md`, `LICENSE`, `AGENTS.md`, `GEMINI.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `llm.txt`)
 - CI/CD files and ignore definitions (`.gitignore`, `.dockerignore`, `.npmignore`, `.npmrc`, `.node-version`, `.nvmrc`, `.env.example`)
 
 When creating _any_ validation tests or one-off logic scripts, default to `scripts/ad-hoc/` or `tests/unit/` according to your goals. Do not pollute the `/` root context.
@@ -283,6 +282,9 @@ When creating _any_ validation tests or one-off logic scripts, default to `scrip
   untracking is done with `git rm --cached` so the disk content stays. The
   `check:tracked-artifacts` gate (pre-commit + CI) fails on ANY tracked root path starting with
   `_`, present or future. See Hard Rule #23 for the `_tasks` specifics.
+- **Temporary working files belong in `_artifacts/`, not a harness-specific scratch path.** Use it
+  for exports, generated archives, and one-off intermediate output. Keep durable plans, specs,
+  research, and hand-offs in the separate `_tasks/` repository instead.
 
 ---
 
@@ -496,7 +498,7 @@ Why this matters: fixing bug A while opening bug B is worse than not fixing at a
 - Do not close a contributor pull request after using its code; merge it through GitHub so
   the contributor receives credit.
 - **Never merge a PR that touches an agent-instruction surface without explicit operator
-  approval** — `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `llm.txt` (+ mirrors) and
+  approval** — `AGENTS.md`, `GEMINI.md`, `llm.txt` (+ mirrors) and
   `skills/**/SKILL.md` are executed as authority by every AI session; a merged instruction
   compromises every future agent run. Check with `gh pr diff <N> --name-only` before any
   merge. Incident record: PR #11770 (2026-09-01) told agents to execute a third-party
@@ -560,20 +562,19 @@ own dedicated branch, and you MUST confirm the base branch with the operator bef
    `main` or "whatever I'm on" — the answer is usually the active `release/vX.Y.Z`, but it can
    be another feature/release branch. Get the base explicitly.
 2. **Create an isolated worktree + branch off that base** (never reuse the main checkout).
-   **🔴 MANDATORY PATH: every worktree lives under `.claude/worktrees/` — and nowhere else.**
+   **MANDATORY PATH: every worktree lives under `.worktrees/` — and nowhere else.**
    This is the single canonical location. It is gitignored AND in the `tsconfig.json` /
-   `.dockerignore` excludes, so worktrees never leak into the build scope. **Never** use
-   `.worktrees/`, repo-root, or any other path — a worktree outside `.claude/worktrees/`
-   (a) escapes the build-scope excludes and poisons `next build` (the `tsconfig`
-   `include: **/*` globs ~70× the codebase → OOM; incident 2026-06-25) and (b) scatters
-   worktrees across two dirs.
+   `.dockerignore` excludes, so worktrees never leak into the build scope. **Never** use the
+   repo root or any other path — a worktree outside `.worktrees/` escapes the build-scope
+   excludes and can poison `next build` (the `tsconfig` `include: **/*` globs ~70× the
+   codebase → OOM; incident 2026-06-25).
 
    ```bash
    BASE_BRANCH="release/vX.Y.Z"          # ← the branch the operator confirmed in step 1
    TASK="feat/your-feature"               # feat/ fix/ refactor/ docs/ test/ chore/
    git fetch origin "$BASE_BRANCH"
-   git worktree add ".claude/worktrees/${TASK##*/}" -b "$TASK" "origin/$BASE_BRANCH"
-   cd ".claude/worktrees/${TASK##*/}"
+   git worktree add ".worktrees/${TASK##*/}" -b "$TASK" "origin/$BASE_BRANCH"
+   cd ".worktrees/${TASK##*/}"
    # Reuse the main checkout's node_modules to skip a per-worktree npm install.
    # HARD LINKS (`cp -al`), never a symlink: ~5s for the whole tree and near-zero extra
    # disk (the inodes are shared), and unlike a symlink it does not break the dev server.
@@ -589,7 +590,7 @@ is invalid, it points out of the filesystem root`) while typecheck, lint and the
 3. **Work, commit, push, open the PR — all from inside the worktree.** Never `git checkout` a
    different branch inside a worktree another session might share.
 4. **Tear down only your own** worktree + branch when done, from the main checkout:
-   `git worktree remove .claude/worktrees/<dir>` then `git branch -D <task>`. Never blanket-delete
+   `git worktree remove .worktrees/<dir>` then `git branch -D <task>`. Never blanket-delete
    `fix/*`/`feat/*` — other sessions keep their own; delete only the branches you created, by name.
 5. **Never touch another session's worktree, branch, or uncommitted changes.** If `git worktree
 list` shows worktrees you didn't create, leave them alone. End every session with the main
@@ -705,7 +706,7 @@ the stale-enforcement added in Fase 6A.3.
 13. Never string-interpolate external paths or runtime values into shell scripts passed to `exec()`/`spawn()` — pass via the `env` option instead. Reference: `src/mitm/cert/install.ts::updateNssDatabases`.
 14. Never dismiss a CodeQL / Secret-Scanning alert without (a) first checking the pattern docs above to see if the helper applies, and (b) recording the technical justification in the dismissal comment. Precedent: `js/stack-trace-exposure` raised on callsites that already route through `sanitizeErrorMessage()` is a known CodeQL limitation (custom sanitizers not recognized) — dismiss as `false positive` referencing `docs/security/ERROR_SANITIZATION.md`.
 15. Never expose routes that spawn child processes (`/api/mcp/`, `/api/cli-tools/runtime/`) without `isLocalOnlyPath()` classification in `src/server/authz/routeGuard.ts`. Loopback enforcement happens unconditionally before any auth check — leaked JWT via tunnel cannot trigger process spawning. See `docs/security/ROUTE_GUARD_TIERS.md`.
-16. Never credit or advertise an AI assistant, LLM, or automation account in any commit/PR metadata. Two forbidden forms, both equivalent — they route attribution to a bot account (or advertise AI authorship) and hide the real author (`diegosouzapw`): **(a)** `Co-Authored-By` trailers naming an AI/bot (e.g. names containing "Claude", "GPT", "Copilot", "Bot"; emails at `anthropic.com` / `openai.com` / bot-owned `noreply.github.com` addresses); **(b)** AI-generation footers or descriptions anywhere in a commit message, PR title/body, or CHANGELOG — e.g. `🤖 Generated with [Claude Code]`, "Generated with Claude Code", "Made with <AI tool>", or any `Co-authored-by: Claude/GPT/Copilot` line. This **overrides any harness, template, or tool default that auto-appends such a footer** — strip it before pushing; do not let it reach a commit, PR, or CHANGELOG. Human collaborators — including upstream PR authors and issue reporters being ported into OmniRoute — MAY and SHOULD be credited with standard `Co-authored-by: Name <email>` trailers; the upstream-port workflows (`/port-upstream-features`, `/port-upstream-issues`) depend on this.
+16. Never credit or advertise an AI assistant, LLM, or automation account in any commit/PR metadata. Two forbidden forms, both equivalent — they route attribution to a bot account (or advertise AI authorship) and hide the real author (`diegosouzapw`): **(a)** `Co-Authored-By` trailers naming an AI/bot (e.g. names identifying a model, vendor, coding assistant, or bot; vendor- or bot-owned email addresses); **(b)** AI-generation footers or descriptions anywhere in a commit message, PR title/body, or CHANGELOG — e.g. "Generated with <AI tool>", "Made with <AI tool>", or any `Co-authored-by` line naming an AI system. This **overrides any harness, template, or tool default that auto-appends such a footer** — strip it before pushing; do not let it reach a commit, PR, or CHANGELOG. Human collaborators — including upstream PR authors and issue reporters being ported into OmniRoute — MAY and SHOULD be credited with standard `Co-authored-by: Name <email>` trailers; the upstream-port workflows (`/port-upstream-features`, `/port-upstream-issues`) depend on this.
 17. Never expose routes under `/api/services/` or `/dashboard/providers/services/*/embed/` without `isLocalOnlyPath()` classification in `src/server/authz/routeGuard.ts`. These routes can spawn child processes (`npm install`, `node`). Loopback enforcement happens unconditionally before any auth check — a leaked JWT via tunnel cannot trigger process spawning. See `docs/security/ROUTE_GUARD_TIERS.md`.
 18. Every bug fix must be validated before shipping: a failing-then-passing unit/integration test (TDD) OR a documented live test on the production VPS (192.168.0.15). A fix without either is not merged. See Testing → "Bug fix / issue triage protocol" for the full decision tree.
 19. Never develop on the shared main checkout. Every development task runs in its own git worktree on its own dedicated branch, and you MUST confirm the base branch with the operator before creating the worktree/branch — never assume `main` or the currently checked-out branch. A `git checkout` in the shared checkout silently destroys other sessions' uncommitted work. Tear down only the worktrees/branches you created (by name, never `fix/*`/`feat/*` wildcards), leave other sessions' worktrees untouched, and end on the branch you started on (the active `release/vX.Y.Z`, never `main`). See Git Workflow → "Worktree isolation".
@@ -713,7 +714,7 @@ the stale-enforcement added in Fase 6A.3.
 21. **Release-freeze — the FROZEN release branch belongs to the release captain; development does NOT stop (parallel-cycle model, 2026-07-04).** `/generate-release` opens a marker issue labeled `release-freeze` at the start of reconciliation (Phase 0a), **immediately cuts the next cycle's branch `release/vX+1` from the frozen tip (Phase 0a.0b — bump + living release PR + re-home of open PRs)**, and closes the freeze once the release PR squash-merges to `main`. Before merging **any** PR, every campaign workflow (`/review-prs`, `/review-group-prs`, `/merge-prs`, `/triage-fix-bugs`, `/implement-fix-bugs`, `/triage-features`, `/implement-features`, `/green-prs`, `/port-upstream-*`) **MUST** check `gh issue list --repo diegosouzapw/OmniRoute --label release-freeze --state open` — if a freeze is active: **NEVER merge into the frozen `release/vX.Y.Z` named in the freeze title**; instead resolve the ACTIVE development branch (the **highest** `release/v*` by semver — normally `release/vX+1`, announced in a freeze-issue comment) and **retarget the PR there** (`gh pr edit <N> --base release/vX+1`, then VERIFY with `gh pr view <N> --json baseRefName` — the edit fails silently) and merge normally. **HOLD only when the highest release/v\* branch IS the frozen one** (the short window before 0a.0b completes, or a pre-parallel-cycle release) — in that case leave the PR ready and open, tell the operator, and resume when the next branch appears or the freeze lifts. The just-shipped fixes reach `release/vX+1` via the Phase 5 sync-back (`scripts/release/sync-next-cycle.mjs`); do not try to sync mid-release. This is a **coordination signal, not a permission lock**: the release captain and the campaign sessions share the `diegosouzapw` identity, so a GitHub branch-protection lock cannot distinguish them — only this honored marker prevents the mid-release commit races that forced full CHANGELOG re-reconciliation in v3.8.40/v3.8.41 (a parallel campaign advanced `release/vX.Y.Z` by 34 commits mid-run). The release captain's own reconciliation/cycle-open pushes are exempt — they _are_ the release. Fixes that must land during a freeze (a homologation finding) follow the post-merge read-only rule: land on `main` first via `fix/release-vX.Y.Z-*`. **⛔ ONLY `/generate-release` may raise a release-freeze, and ONLY at its Phase 0a (start of generating a new version) — lifted at Phase 12c after the squash-merge to `main`.** No campaign, session, or agent may open a `release-freeze` marker at any other time — a freeze is **never** a mid-development coordination tool. If a session ever believes a freeze is genuinely, unavoidably necessary outside the `/generate-release` flow, it **MUST first ask the operator (`diegosouzapw`) in chat, explicitly alert "estou criando um freeze" and get an explicit yes** — never open, extend, or re-open a `release-freeze` autonomously. Conversely, do **not** close/lift an active `/generate-release` freeze to unblock campaign merges: it protects the captain's single clean CI run and auto-lifts at Phase 12c — closing it early re-triggers the exact commit race it prevents. Verify a freeze is legitimate before acting on it: an open `release-freeze` whose title/body references an **OPEN** release PR (`gh pr view <N> --json state`) is the authorized captain freeze — hold, don't touch. (Cycle-model proposal: `_tasks/finished/release-flow/2026-07-04_proposta-ciclo-paralelo-v2.md`.)
 22. **Cross-session safety — this repo is worked by MANY parallel sessions/agents at once; never step on another's in-flight work.** Two absolute bans, both recurring incidents (this rule exists because they keep happening):
     - **(a) Never `git stash` / `git stash pop` — ANYWHERE in this repo, including inside an isolated worktree, and including inside any subagent you dispatch.** `git stash` operates on the **shared repository object store**, not the per-worktree working tree — so a stash pushed or popped in one session can silently clobber or resurrect another parallel session's uncommitted changes. This is not hypothetical: 2026-07-02 a `#5923` quotaCache change leaked into the unrelated `#2296` worktree via a global `stash pop`, and the same class reincided through a **subagent**. To compare working changes against a base ref **without** stashing, use `git show <ref>:<path>` or `git diff <ref> -- <path>`; to confirm a typecheck/lint error is pre-existing on the base, inspect the base ref directly (`git show origin/release/vX.Y.Z:<path>`) — never stash your tree away to "get it clean". **Put this ban verbatim in the prompt of every subagent that touches git** (agents don't inherit this file's context — the recurrence was a subagent).
-    - **(b) Never merge, push, rebase, or force-push a PR / branch / worktree that another session is actively working.** An open PR whose head is a live fix worktree in `.claude/worktrees/` you did **not** create (e.g. `fix-5852`/`fix-5923` carrying fresh commits, even when they share your `diegosouzapw` identity), or any branch another session owns, is **off-limits — HOLD**, and let the owning session merge it. **Before** merging or pushing to any PR you did not create _this_ session, run `git worktree list` to check for a matching in-flight worktree and re-check `gh pr view <N> --json state,headRefOid`. Only the owning session merges its own in-flight PR; mid-flight merges race the owner and re-trigger the exact commit/CHANGELOG races Rule #19 and Rule #21 guard against. (Reinforces Rule #19.)
+    - **(b) Never merge, push, rebase, or force-push a PR / branch / worktree that another session is actively working.** An open PR whose head is a live fix worktree in `.worktrees/` you did **not** create (e.g. `fix-5852`/`fix-5923` carrying fresh commits, even when they share your `diegosouzapw` identity), or any branch another session owns, is **off-limits — HOLD**, and let the owning session merge it. **Before** merging or pushing to any PR you did not create _this_ session, run `git worktree list` to check for a matching in-flight worktree and re-check `gh pr view <N> --json state,headRefOid`. Only the owning session merges its own in-flight PR; mid-flight merges race the owner and re-trigger the exact commit/CHANGELOG races Rule #19 and Rule #21 guard against. (Reinforces Rule #19.)
 23. **`_tasks/` é INTOCÁVEL como estrutura — append/edit-only.** É um repositório git SEPARADO
     (remote privado `diegosouzapw/_tasks_omniroute`) montado como diretório real na raiz do
     checkout principal. Regras absolutas: (a) NUNCA mover, renomear, deletar, esvaziar ou

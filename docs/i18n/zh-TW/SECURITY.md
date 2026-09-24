@@ -230,5 +230,5 @@ docker run -d \
 - [`docs/security/SOCKET_DEV_FINDINGS.md`](docs/security/SOCKET_DEV_FINDINGS.md) — 供應鏈掃描器發現的維護者證明文件
 - [`docs/architecture/RESILIENCE_GUIDE.md`](docs/architecture/RESILIENCE_GUIDE.md) — 斷路器 + 冷卻 + 鎖定
 - [`docs/security/STEALTH_GUIDE.md`](docs/security/STEALTH_GUIDE.md) — TLS 指紋辨識（法律／倫理聲明）
-- [`CLAUDE.md`](CLAUDE.md) — AI Agent 的嚴格規則
+- [`AGENTS.md`](AGENTS.md) — AI Agent 的嚴格規則
 - [tldrsec/awesome-secure-defaults](https://github.com/tldrsec/awesome-secure-defaults) — 精選預設安全程式庫清單

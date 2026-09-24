@@ -9,7 +9,7 @@ Opisuje każdą bramkę, co waliduje, w którym jobie CI działa, czy używa
 baseline ratchet albo polityki pass/fail, oraz czy blokuje build, czy jest advisory.
 
 Krótkie podsumowanie i politykę allowlist znajdziesz w sekcji „Quality Gates & Ratchets”
-w `CLAUDE.md`.
+w `AGENTS.md`.
 
 ---
 

@@ -886,4 +886,4 @@ the most recent lines within the `tail` limit. Logs are not persisted to disk un
 - `docs/architecture/CODEBASE_DOCUMENTATION.md` — §3.2 Embedded Services module mapping
 - `docs/architecture/ARCHITECTURE.md` — system-level context
 - `docs/openapi.yaml` — machine-readable endpoint definitions
-- `CLAUDE.md` §"Adding a New Embedded Service" — quick-reference checklist
+- `AGENTS.md` §"Adding a New Embedded Service" — quick-reference checklist

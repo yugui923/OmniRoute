@@ -48,7 +48,7 @@ OmniRoute/
 ├── config/               运行时配置示例
 ├── images/               市场/截图资源
 ├── _ideia/, _references/, _mono_repo/, _tasks/   内部草稿/规划（不发布）
-├── CLAUDE.md             面向 Claude Code 的仓库规则
+├── AGENTS.md             面向 Claude Code 的仓库规则
 ├── AGENTS.md             面向 Agent 的深层架构参考
 ├── package.json          v3.8.0，工作空间根目录
 └── tsconfig.json         路径别名 + 核心编译选项
@@ -700,7 +700,7 @@ bin/
 | 连接冷却     | 单个账户/Key         | `src/sse/services/auth.ts` 中的 `markAccountUnavailable()`；由 `accountFallback.checkFallbackError()` 消费 |
 | 模型锁定     | 服务商 + 连接 + 模型 | `open-sse/services/accountFallback.ts`，持久化于 `domain_lockout_state`                                    |
 
-参见 [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) 和 [CLAUDE.md](../../CLAUDE.md) 中的专门章节。
+参见 [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) 和 [AGENTS.md](../../AGENTS.md) 中的专门章节。
 
 ---
 
@@ -766,7 +766,7 @@ bin/
 
 ---
 
-## 12. 硬规则（来自 CLAUDE.md）
+## 12. 硬规则（来自 AGENTS.md）
 
 1. 切勿提交机密或凭据。
 2. 切勿向 `src/lib/localDb.ts` 添加逻辑。
@@ -794,5 +794,5 @@ bin/
 - [ELECTRON_GUIDE.md](../guides/ELECTRON_GUIDE.md)（如果存在）、[DOCKER_GUIDE.md](../guides/DOCKER_GUIDE.md)、[FLY_IO_DEPLOYMENT_GUIDE.md](../ops/FLY_IO_DEPLOYMENT_GUIDE.md)、[VM_DEPLOYMENT_GUIDE.md](../ops/VM_DEPLOYMENT_GUIDE.md)、[TERMUX_GUIDE.md](../guides/TERMUX_GUIDE.md)、[PWA_GUIDE.md](../guides/PWA_GUIDE.md) — 部署目标。
 - [TROUBLESHOOTING.md](../guides/TROUBLESHOOTING.md) — 常见运维问题。
 - [CONTRIBUTING.md](../../CONTRIBUTING.md) — 贡献者工作流。
-- [CLAUDE.md](../../CLAUDE.md) — 面向 Claude Code 的仓库规则（上述约定的权威来源）。
+- [AGENTS.md](../../AGENTS.md) — 面向 Claude Code 的仓库规则（上述约定的权威来源）。
 - [AGENTS.md](../../AGENTS.md) — 面向 Agent 的深层架构参考。

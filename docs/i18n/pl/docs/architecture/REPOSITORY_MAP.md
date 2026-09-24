@@ -59,9 +59,9 @@ OmniRoute/
 | **README.md**                               | Landing marketingowy + szybki start + macierz funkcji (zob. też `llm.txt`)                 |
 | **CHANGELOG.md**                            | Changelog per-release (auto-generowany przez skill `/version-bump-cc`)                     |
 | **LICENSE**                                 | Tekst licencji MIT                                                                         |
-| **CLAUDE.md**                               | Reguły projektu dla agentów Claude Code (twarde reguły, konwencje, scenariusze)            |
-| **AGENTS.md**                               | To samo co CLAUDE.md, ale dla agentów AI innych niż Claude (Codex, Cursor itd.)            |
-| **GEMINI.md**                               | Zwięzłe reguły dla agentów opartych o Gemini (podzbiór CLAUDE.md)                          |
+| **AGENTS.md**                               | Reguły projektu dla agentów Claude Code (twarde reguły, konwencje, scenariusze)            |
+| **AGENTS.md**                               | To samo co AGENTS.md, ale dla agentów AI innych niż Claude (Codex, Cursor itd.)            |
+| **GEMINI.md**                               | Zwięzłe reguły dla agentów opartych o Gemini (podzbiór AGENTS.md)                          |
 | **CONTRIBUTING.md**                         | Przewodnik kontrybutora: setup, conventional commits, testy, flow PR                       |
 | **SECURITY.md**                             | Polityka zgłaszania podatności, wspierane wersje, model zagrożeń                           |
 | **CODE_OF_CONDUCT.md**                      | Contributor Covenant — oczekiwania co do zachowania w społeczności                         |
@@ -450,7 +450,7 @@ open-sse/
 | `docs/archive/`       | Zarchiwizowane/historyczne docs (np. `RFC-AUTO-ASSESSMENT-DRAFT.md` — zastąpione przez EVALS)                                                                                                        |
 | `docs/i18n/`          | Zlokalizowane tłumaczenia docs (41 locale)                                                                                                                                                           |
 | `docs/screenshots/`   | Zasoby graficzne do przewodników                                                                                                                                                                     |
-| `_tasks/superpowers/` | Plany/specyfikacje z superpowers (`writing-plans`/`brainstorming`) + research — izolowane, osobno wersjonowane repo, w .gitignore głównego drzewa. Zob. CLAUDE.md → "Planning & Research Artifacts". |
+| `_tasks/superpowers/` | Plany/specyfikacje z superpowers (`writing-plans`/`brainstorming`) + research — izolowane, osobno wersjonowane repo, w .gitignore głównego drzewa. Zob. AGENTS.md → "Planning & Research Artifacts". |
 
 ---
 
@@ -572,7 +572,7 @@ Nie uwzględnione w wyjściu `npm pack`. Zob. `.npmignore`.
 
 ## Wskazówki nawigacyjne
 
-- **Nowy kontrybutor?** Przeczytaj `CONTRIBUTING.md` → `CLAUDE.md` → `docs/architecture/ARCHITECTURE.md` → `docs/architecture/CODEBASE_DOCUMENTATION.md`.
+- **Nowy kontrybutor?** Przeczytaj `CONTRIBUTING.md` → `AGENTS.md` → `docs/architecture/ARCHITECTURE.md` → `docs/architecture/CODEBASE_DOCUMENTATION.md`.
 - **Dodajesz providera?** Postępuj według `docs/architecture/ARCHITECTURE.md § Adding a New Provider` + sprawdź `docs/reference/PROVIDER_REFERENCE.md`.
 - **Dodajesz trasę?** `docs/architecture/ARCHITECTURE.md § Adding a New API Route` + `src/shared/validation/schemas.ts`.
 - **Dodajesz narzędzie MCP?** `docs/frameworks/MCP-SERVER.md § Adding a Tool`.

@@ -21,7 +21,7 @@ zamrożeń release albo gdy plan Mergify Open Source kiedykolwiek się zmieni.
 4. Po merge ciągły workflow release-green waliduje nowy tip na push
    i otwiera issue atrybucji, jeśli kombinacja się regresowała (nigdy auto-revert).
 
-Guardrails (odzwierciedlenie Hard Rules #21/#22 z `CLAUDE.md`):
+Guardrails (odzwierciedlenie Hard Rules #21/#22 z `AGENTS.md`):
 
 - **Otwarte zamrożenie release** → NIE nakładaj etykiet na PR celujące w zamrożoną gałąź; najpierw
   zmień target na aktywne `release/vX+1`.

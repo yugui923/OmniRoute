@@ -1,6 +1,6 @@
 # AI 助手的安全與整潔規則
 
-> **適用範圍：** 基於 Gemini 的代理規則。若為 Claude Code，請見 `CLAUDE.md`。若為其他 AI 助手，請見 `AGENTS.md`。
+> **適用範圍：** 基於 Gemini 的代理規則。若為 Claude Code，請見 `AGENTS.md`。若為其他 AI 助手，請見 `AGENTS.md`。
 
 ## 1. 檔案放置與組織
 
@@ -11,12 +11,12 @@
 
 - 設定檔（`vitest.config.ts`、`next.config.mjs`、`eslint.config.mjs`、`tsconfig*.json`、`playwright.config.ts`、`prettier.config.mjs`、`postcss.config.mjs`、`sonar-project.properties`、`fly.toml`、`docker-compose*.yml`、`Dockerfile`）
 - 相依性檔案（`package.json`、`package-lock.json`）
-- 文件檔案（`README.md`、`CHANGELOG.md`、`LICENSE`、`AGENTS.md`、`CLAUDE.md`、`GEMINI.md`、`CONTRIBUTING.md`、`SECURITY.md`、`CODE_OF_CONDUCT.md`、`llm.txt`、`Tuto_Qdrant.md`）
+- 文件檔案（`README.md`、`CHANGELOG.md`、`LICENSE`、`AGENTS.md`、`AGENTS.md`、`GEMINI.md`、`CONTRIBUTING.md`、`SECURITY.md`、`CODE_OF_CONDUCT.md`、`llm.txt`、`Tuto_Qdrant.md`）
 - CI/CD 檔案與忽略定義（`.gitignore`、`.dockerignore`、`.npmignore`、`.npmrc`、`.node-version`、`.nvmrc`、`.env.example`）
 
 當建立**任何**驗證測試或一次性邏輯腳本時，請根據您的目標預設使用 `scripts/ad-hoc/` 或 `tests/unit/` 目錄。請勿汙染 `／` 根目錄上下文。
 
-## 2. 嚴格規則（與 `CLAUDE.md` 對應）
+## 2. 嚴格規則（與 `AGENTS.md` 對應）
 
 1. **絕不提交機密或憑證。** 使用 `.env`（從 `.env.example` 自動產生）或密碼保管庫。密碼、OAuth 密鑰、API 金鑰和 Cookie 值**不得**出現在已提交的檔案中。
 2. **絕不向 `src/lib/localDb.ts` 添加邏輯。** 該檔案僅作為重新匯出的統合點（barrel）。

@@ -97,7 +97,7 @@ pozostałe są linkowane z przewodników domenowych.
 ![3-layer resilience model](../diagrams/exported/resilience-3layers.svg)
 
 > Źródło: [diagrams/resilience-3layers.mmd](../diagrams/resilience-3layers.mmd) — także linkowane z
-> [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) oraz referencji resilience w `CLAUDE.md`.
+> [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) oraz referencji resilience w `AGENTS.md`.
 
 ## Zakres i granice
 

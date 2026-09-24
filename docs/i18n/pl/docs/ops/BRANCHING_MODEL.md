@@ -10,7 +10,7 @@ OmniRoute stosuje model wydań oparty na **równoległych cyklach**: dedykowana 
 tag `vX.Y.Z`, gdy dany cykl trafia do produkcji. Widok commitów lądujących na
 `release/*` _oraz_ na `main` jest oczekiwany — to nie pomyłka.
 
-Szczegóły dla maintainerów znajdują się w `CLAUDE.md` (Hard Rule #21) oraz w
+Szczegóły dla maintainerów znajdują się w `AGENTS.md` (Hard Rule #21) oraz w
 [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md). Ta strona to publiczne
 podsumowanie skierowane do contributorów.
 

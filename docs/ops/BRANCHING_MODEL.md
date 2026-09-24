@@ -10,7 +10,7 @@ branch for the active cycle, `main` for the published line, and an immutable
 `vX.Y.Z` tag when that cycle ships. Seeing commits land on `release/*` *and* on
 `main` is expected — not a mix-up.
 
-Maintainer detail lives in `CLAUDE.md` (Hard Rule #21) and
+Maintainer detail lives in `AGENTS.md` (Hard Rule #21) and
 [RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md). This page is the public
 contributor-facing summary.
 

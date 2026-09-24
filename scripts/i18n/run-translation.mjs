@@ -3,7 +3,7 @@
  * OmniRoute — Docs translation pipeline (hash-based, incremental).
  *
  * Source of truth: `config/i18n.json` (locale list) and the original English
- * markdown files at the repo root (`CLAUDE.md`, `GEMINI.md`, `README.md`, …)
+ * markdown files at the repo root (`AGENTS.md`, `GEMINI.md`, `README.md`, …)
  * plus `docs/*.md`.
  *
  * Targets land in `docs/i18n/<locale>/...` mirroring the source layout, with a
@@ -18,7 +18,7 @@
  * Usage (driven by npm scripts in package.json):
  *   npm run i18n:run
  *   npm run i18n:run -- --locale=pt-BR
- *   npm run i18n:run -- --files=CLAUDE.md,docs/ARCHITECTURE.md
+ *   npm run i18n:run -- --files=AGENTS.md,docs/ARCHITECTURE.md
  *   npm run i18n:run -- --force
  *   npm run i18n:run:dry
  *   npm run i18n:run -- --adopt   (rebuild .i18n-state.json from disk, no API calls)
@@ -116,7 +116,6 @@ const DOCS_DIR = path.join(ROOT, "docs");
 // list — they are handled by `scripts/check-docs-sync.mjs` rules and are kept
 // in sync by other tooling. Adding them here would conflict with that script.
 const ROOT_DOC_SOURCES = [
-  "CLAUDE.md",
   "GEMINI.md",
   "AGENTS.md",
   "CONTRIBUTING.md",
@@ -273,7 +272,7 @@ async function collectAllSources() {
 }
 
 function targetPathFor(relSource, locale) {
-  // Root MDs (`CLAUDE.md`, …) → `docs/i18n/<loc>/CLAUDE.md`
+  // Root MDs (`AGENTS.md`, …) → `docs/i18n/<loc>/AGENTS.md`
   if (!relSource.includes("/")) {
     return path.join(DOCS_I18N_DIR, locale, relSource);
   }

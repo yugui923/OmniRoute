@@ -882,7 +882,7 @@ curl -X DELETE http://localhost:20128/api/resilience/model-cooldowns \
   -d '{"all":true}'
 ```
 
-完整概念参考和熔断器默认值：参见 [`CLAUDE.md`](../../../CLAUDE.md) → "Resilience Runtime State"。
+完整概念参考和熔断器默认值：参见 [`AGENTS.md`](../../../AGENTS.md) → "Resilience Runtime State"。
 
 ---
 

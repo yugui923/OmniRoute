@@ -34,7 +34,7 @@ we will extend the attestation here.
 
 **Trigger**: user clicks "Enable MITM proxy" in the local dashboard at
 `/dashboard/cli-tools/mitm`. The route is loopback-only — see hard rule #17 in
-`CLAUDE.md` and `src/server/authz/routeGuard.ts::isLocalOnlyPath()`. A leaked
+`AGENTS.md` and `src/server/authz/routeGuard.ts::isLocalOnlyPath()`. A leaked
 JWT exposed via a tunnel **cannot** trigger this code path.
 
 **Privileged operations performed (per platform)**:

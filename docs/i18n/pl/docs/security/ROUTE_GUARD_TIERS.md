@@ -179,7 +179,7 @@ wygasła baza nie downgrade'owała po cichu do „deny”.
    `src/server/authz/routeGuard.ts`
 2. Dodaj test w `tests/unit/authz/routeGuard.test.ts` asertujący, że
    `isLocalOnlyPath()` zwraca true dla nowego prefiksu
-3. **Nigdy nie pomijaj tego kroku** — zob. Hard Rule #15 w `CLAUDE.md`
+3. **Nigdy nie pomijaj tego kroku** — zob. Hard Rule #15 w `AGENTS.md`
 4. Zdecyduj: czy ta trasa MA także należeć do `LOCAL_ONLY_MANAGE_SCOPE_BYPASS_PREFIXES`?
    Domyślna odpowiedź to **nie**. Opt-in tylko gdy trasa jest bezpieczna do
    wystawienia posiadaczowi manage-scope (tzn. NIE spawnuje dowolnego kodu

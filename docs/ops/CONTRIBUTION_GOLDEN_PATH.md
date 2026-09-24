@@ -183,7 +183,7 @@ the best-effort Bun adapter path changes; Node remains authoritative.
 
 - Root and workspace manifests/lockfile, `scripts/build/`, Next.js standalone assembly, `dist/`
   package contents, Electron platform metadata, CI workflows, and deployment sentinels.
-- Supported Node ranges and the allow-listed Bun use in `CLAUDE.md` must remain intact.
+- Supported Node ranges and the allow-listed Bun use in `AGENTS.md` must remain intact.
 - Build artifacts stay untracked; dependency, license, workflow, and package policies apply.
 
 **Focused loop**

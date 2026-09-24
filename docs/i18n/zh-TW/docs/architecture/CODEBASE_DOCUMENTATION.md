@@ -57,7 +57,7 @@ OmniRoute/
 ├── config/               執行時期設定範例
 ├── images/               行銷/截圖資源
 ├── _ideia/、_references/、_mono_repo/、_tasks/   內部草稿/規劃（不隨產品出貨）
-├── CLAUDE.md             給 Claude Code 的儲存庫規則
+├── AGENTS.md             給 Claude Code 的儲存庫規則
 ├── AGENTS.md             給代理程式的進階架構參考
 ├── package.json          v3.8.0，workspace 根目錄
 └── tsconfig.json         路徑別名 + 核心編譯器選項
@@ -718,7 +718,7 @@ bin/
 | 模型鎖定     | 提供者 + 連線 + 模型 | `open-sse/services/accountFallback.ts`，持久化於 `domain_lockout_state`                                    |
 
 參見 [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) 及
-[CLAUDE.md](../../CLAUDE.md) 中的專屬章節。
+[AGENTS.md](../../AGENTS.md) 中的專屬章節。
 
 ---
 
@@ -782,7 +782,7 @@ bin/
 
 ---
 
-## 12. 硬性規則（來自 CLAUDE.md）
+## 12. 硬性規則（來自 AGENTS.md）
 
 1. 切勿提交機密或憑證。
 2. 切勿在 `src/lib/localDb.ts` 中新增邏輯。
@@ -810,5 +810,5 @@ bin/
 - [ELECTRON_GUIDE.md](../guides/ELECTRON_GUIDE.md)（若存在）、[DOCKER_GUIDE.md](../guides/DOCKER_GUIDE.md)、[FLY_IO_DEPLOYMENT_GUIDE.md](../ops/FLY_IO_DEPLOYMENT_GUIDE.md)、[VM_DEPLOYMENT_GUIDE.md](../ops/VM_DEPLOYMENT_GUIDE.md)、[TERMUX_GUIDE.md](../guides/TERMUX_GUIDE.md)、[PWA_GUIDE.md](../guides/PWA_GUIDE.md) — 部署目標。
 - [TROUBLESHOOTING.md](../guides/TROUBLESHOOTING.md) — 常見運維問題。
 - [CONTRIBUTING.md](../../CONTRIBUTING.md) — 貢獻者工作流程。
-- [CLAUDE.md](../../CLAUDE.md) — 給 Claude Code 的儲存庫規則（上述許多慣例的真實來源）。
+- [AGENTS.md](../../AGENTS.md) — 給 Claude Code 的儲存庫規則（上述許多慣例的真實來源）。
 - [AGENTS.md](../../AGENTS.md) — 代理程式使用的進階架構參考。

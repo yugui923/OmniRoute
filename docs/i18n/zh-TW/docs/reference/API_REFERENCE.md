@@ -898,7 +898,7 @@ curl -X DELETE http://localhost:20128/api/resilience/model-cooldowns \
   -d '{"all":true}'
 ```
 
-完整概念參考和斷路器預設值：請參閱 [`CLAUDE.md`](../../CLAUDE.md) →「彈性執行時期狀態」。
+完整概念參考和斷路器預設值：請參閱 [`AGENTS.md`](../../AGENTS.md) →「彈性執行時期狀態」。
 
 ---
 

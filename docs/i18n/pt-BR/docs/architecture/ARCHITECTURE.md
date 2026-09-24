@@ -105,7 +105,7 @@ os demais estão vinculados a seus guias específicos de domínio.
 ![Modelo de resiliência de 3 camadas](../diagrams/exported/resilience-3layers.svg)
 
 > Fonte: [diagrams/resilience-3layers.mmd](../diagrams/resilience-3layers.mmd) — também vinculado a
-> [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) e à referência de resiliência `CLAUDE.md`.
+> [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) e à referência de resiliência `AGENTS.md`.
 
 ## Escopo e Limites
 

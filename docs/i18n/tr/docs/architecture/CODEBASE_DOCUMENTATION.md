@@ -56,7 +56,7 @@ OmniRoute/
 ├── docs/                 Genel dokümantasyon
 ├── public/               Statik varlıklar, PWA manifesti, servis çalışanı
 ├── config/               Çalışma zamanı yapılandırma örnekleri
-├── CLAUDE.md             Claude Code için kurallar
+├── AGENTS.md             Claude Code için kurallar
 ├── AGENTS.md             Yapay zeka ajanları için derin mimari referansı
 ├── package.json          Çalışma alanı kökü
 └── tsconfig.json         Yol takma adları ve derleyici seçenekleri

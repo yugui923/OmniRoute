@@ -97,7 +97,7 @@ the rest are linked from their domain-specific guides.
 ![3-layer resilience model](../diagrams/exported/resilience-3layers.svg)
 
 > Source: [diagrams/resilience-3layers.mmd](../diagrams/resilience-3layers.mmd) — also linked from
-> [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) and the `CLAUDE.md` resilience reference.
+> [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) and the `AGENTS.md` resilience reference.
 
 ## Scope and Boundaries
 

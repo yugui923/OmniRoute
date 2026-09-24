@@ -97,7 +97,7 @@ v3.8.0 平台的標準版本控制 Mermaid 原始檔位於
 ![三層韌性模型](../diagrams/exported/resilience-3layers.svg)
 
 > 原始檔：[diagrams/resilience-3layers.mmd](../diagrams/resilience-3layers.mmd) — 亦可參閱
-> [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) 與 `CLAUDE.md` 韌性參考。
+> [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) 與 `AGENTS.md` 韌性參考。
 
 ## 範圍與邊界
 

@@ -62,7 +62,7 @@ OmniRoute/
 ├── config/               Runtime config samples
 ├── images/               Marketing/screenshot assets
 ├── _ideia/, _references/, _mono_repo/, _tasks/   Internal scratch / planning (not shipped)
-├── CLAUDE.md             Repo rules for Claude Code
+├── AGENTS.md             Repo rules for AI coding agents
 ├── AGENTS.md             Deeper architecture reference for agents
 ├── package.json          v3.8.51, workspace root
 └── tsconfig.json         Path aliases + core compiler options
@@ -724,7 +724,7 @@ Client request
 | Model lockout            | Provider + connection + model | `open-sse/services/accountFallback.ts`, persisted in `domain_lockout_state`                                  |
 
 See [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) and the dedicated section in
-[CLAUDE.md](../../CLAUDE.md).
+[AGENTS.md](../../AGENTS.md).
 
 ---
 
@@ -820,7 +820,7 @@ See [A2A-SERVER.md § Adding a New Skill](../frameworks/A2A-SERVER.md). Skills l
 
 ---
 
-## 12. Hard Rules (from CLAUDE.md)
+## 12. Hard Rules (from AGENTS.md)
 
 1. Never commit secrets or credentials.
 2. Never barrel-import — use specific `src/lib/db/*` modules directly.
@@ -850,6 +850,6 @@ See [A2A-SERVER.md § Adding a New Skill](../frameworks/A2A-SERVER.md). Skills l
 - [ELECTRON_GUIDE.md](../guides/ELECTRON_GUIDE.md) (if present), [DOCKER_GUIDE.md](../guides/DOCKER_GUIDE.md), [FLY_IO_DEPLOYMENT_GUIDE.md](../ops/FLY_IO_DEPLOYMENT_GUIDE.md), [VM_DEPLOYMENT_GUIDE.md](../ops/VM_DEPLOYMENT_GUIDE.md), [TERMUX_GUIDE.md](../guides/TERMUX_GUIDE.md), [PWA_GUIDE.md](../guides/PWA_GUIDE.md) — deployment targets.
 - [TROUBLESHOOTING.md](../guides/TROUBLESHOOTING.md) — common operational issues.
 - [CONTRIBUTING.md](../../CONTRIBUTING.md) — contributor workflow.
-- [CLAUDE.md](../../CLAUDE.md) — repo rules for Claude Code (the source of truth
+- [AGENTS.md](../../AGENTS.md) — repo rules for AI coding agents (the source of truth
   for many of the conventions above).
 - [AGENTS.md](../../AGENTS.md) — deeper architecture reference used by agents.

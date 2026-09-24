@@ -34,7 +34,7 @@ rozszerzymy tę atestację.
 
 **Wyzwalacz**: użytkownik klika „Enable MITM proxy” w lokalnym dashboardzie pod
 `/dashboard/cli-tools/mitm`. Trasa jest wyłącznie loopback — zob. hard rule #17 w
-`CLAUDE.md` oraz `src/server/authz/routeGuard.ts::isLocalOnlyPath()`. Wyciekły
+`AGENTS.md` oraz `src/server/authz/routeGuard.ts::isLocalOnlyPath()`. Wyciekły
 JWT wystawiony przez tunel **nie może** uruchomić tej ścieżki kodu.
 
 **Operacje uprzywilejowane (per platforma)**:

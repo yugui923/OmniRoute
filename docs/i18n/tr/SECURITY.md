@@ -242,5 +242,5 @@ Geliştirme hattında uyarıları esnetemeyen kullanıcılar için: `OMNIROUTE_B
 - [`docs/security/SOCKET_DEV_FINDINGS.md`](docs/security/SOCKET_DEV_FINDINGS.md) — tedarik zinciri tarayıcı bulguları için onay beyanı
 - [`docs/architecture/RESILIENCE_GUIDE.md`](docs/architecture/RESILIENCE_GUIDE.md) — devre kesici + soğuma süresi + model kilitleme
 - [`docs/security/STEALTH_GUIDE.md`](docs/security/STEALTH_GUIDE.md) — TLS parmak izi (yasal/etik bildirim)
-- [`CLAUDE.md`](CLAUDE.md) — yapay zeka ajanları için katı kurallar
+- [`AGENTS.md`](AGENTS.md) — yapay zeka ajanları için katı kurallar
 - [tldrsec/awesome-secure-defaults](https://github.com/tldrsec/awesome-secure-defaults) — derlenmiş varsayılan olarak güvenli kütüphaneler

@@ -249,5 +249,5 @@ dla receptury publikacji.
 - [`docs/security/SOCKET_DEV_FINDINGS.md`](docs/security/SOCKET_DEV_FINDINGS.md) — poświadczenie maintainerów dla ustaleń skanerów łańcucha dostaw
 - [`docs/architecture/RESILIENCE_GUIDE.md`](docs/architecture/RESILIENCE_GUIDE.md) — circuit breaker + cooldown + lockout
 - [`docs/security/STEALTH_GUIDE.md`](docs/security/STEALTH_GUIDE.md) — fingerprinting TLS (uwaga prawna/etyczna)
-- [`CLAUDE.md`](CLAUDE.md) — twarde reguły dla agentów AI
+- [`AGENTS.md`](AGENTS.md) — twarde reguły dla agentów AI
 - [tldrsec/awesome-secure-defaults](https://github.com/tldrsec/awesome-secure-defaults) — wyselekcjonowane biblioteki secure-by-default

@@ -876,4 +876,4 @@ najnowsze linie w limicie `tail`. Logi nie są persystowane na dysk, chyba że
 - `docs/architecture/CODEBASE_DOCUMENTATION.md` — §3.2 mapowanie modułu Embedded Services
 - `docs/architecture/ARCHITECTURE.md` — kontekst systemowy
 - `docs/openapi.yaml` — maszynowo czytelne definicje endpointów
-- `CLAUDE.md` §"Adding a New Embedded Service" — checklista szybkiej referencji
+- `AGENTS.md` §"Adding a New Embedded Service" — checklista szybkiej referencji

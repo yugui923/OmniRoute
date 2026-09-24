@@ -238,5 +238,5 @@ docker run -d \
 - [`docs/security/SOCKET_DEV_FINDINGS.md`](docs/security/SOCKET_DEV_FINDINGS.md) — 供应链扫描器检测的维护者声明
 - [`docs/architecture/RESILIENCE_GUIDE.md`](docs/architecture/RESILIENCE_GUIDE.md) — 熔断器 + 冷却 + 锁定
 - [`docs/security/STEALTH_GUIDE.md`](docs/security/STEALTH_GUIDE.md) — TLS 指纹伪装（法律/道德声明）
-- [`CLAUDE.md`](CLAUDE.md) — AI 智能体的硬规则
+- [`AGENTS.md`](AGENTS.md) — AI 智能体的硬规则
 - [tldrsec/awesome-secure-defaults](https://github.com/tldrsec/awesome-secure-defaults) — 精选的安全默认库
