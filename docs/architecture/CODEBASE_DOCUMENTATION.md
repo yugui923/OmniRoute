@@ -63,7 +63,7 @@ OmniRoute/
 ├── images/               Marketing/screenshot assets
 ├── _ideia/, _references/, _mono_repo/, _tasks/   Internal scratch / planning (not shipped)
 ├── AGENTS.md             Repo rules for AI coding agents
-├── AGENTS.md             Deeper architecture reference for agents
+├── CLAUDE.md             Claude Code harness-specific additions
 ├── package.json          v3.8.51, workspace root
 └── tsconfig.json         Path aliases + core compiler options
 ```
@@ -852,4 +852,4 @@ See [A2A-SERVER.md § Adding a New Skill](../frameworks/A2A-SERVER.md). Skills l
 - [CONTRIBUTING.md](../../CONTRIBUTING.md) — contributor workflow.
 - [AGENTS.md](../../AGENTS.md) — repo rules for AI coding agents (the source of truth
   for many of the conventions above).
-- [AGENTS.md](../../AGENTS.md) — deeper architecture reference used by agents.
+- [CLAUDE.md](../../CLAUDE.md) — Claude Code harness-specific additions.

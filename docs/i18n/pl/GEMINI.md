@@ -1,6 +1,6 @@
 # Zasady bezpieczeństwa i porządku dla asystentów AI
 
-> **Zakres:** reguły dla agentów opartych na Gemini. Dla Claude Code zobacz `AGENTS.md`. Dla innych asystentów AI zobacz `AGENTS.md`.
+> **Zakres:** reguły dla agentów opartych na Gemini. Wspólne reguły wszystkich agentów znajdują się w `AGENTS.md`; dodatki specyficzne dla Claude Code — w `CLAUDE.md`.
 
 ## 1. Umieszczanie plików i organizacja
 
@@ -11,7 +11,7 @@
 
 - Pliki konfiguracyjne (`vitest.config.ts`, `next.config.mjs`, `eslint.config.mjs`, `tsconfig*.json`, `playwright.config.ts`, `prettier.config.mjs`, `postcss.config.mjs`, `sonar-project.properties`, `fly.toml`, `docker-compose*.yml`, `Dockerfile`)
 - Pliki zależności (`package.json`, `package-lock.json`)
-- Pliki dokumentacji (`README.md`, `CHANGELOG.md`, `LICENSE`, `AGENTS.md`, `AGENTS.md`, `GEMINI.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `llm.txt`, `Tuto_Qdrant.md`)
+- Pliki dokumentacji (`README.md`, `CHANGELOG.md`, `LICENSE`, `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `llm.txt`, `Tuto_Qdrant.md`)
 - Pliki CI/CD oraz definicje ignorowania (`.gitignore`, `.dockerignore`, `.npmignore`, `.npmrc`, `.node-version`, `.nvmrc`, `.env.example`)
 
 Tworząc _jakiekolwiek_ testy walidacyjne lub jednorazowe skrypty logiczne, domyślnie używaj katalogów `scripts/ad-hoc/` lub `tests/unit/` w zależności od celu. Nie zaśmiecaj kontekstu katalogu głównego `/`.

@@ -59,9 +59,9 @@ OmniRoute/
 | **README.md**                               | Landing marketingowy + szybki start + macierz funkcji (zob. też `llm.txt`)                 |
 | **CHANGELOG.md**                            | Changelog per-release (auto-generowany przez skill `/version-bump-cc`)                     |
 | **LICENSE**                                 | Tekst licencji MIT                                                                         |
-| **AGENTS.md**                               | Reguły projektu dla agentów Claude Code (twarde reguły, konwencje, scenariusze)            |
-| **AGENTS.md**                               | To samo co AGENTS.md, ale dla agentów AI innych niż Claude (Codex, Cursor itd.)            |
-| **GEMINI.md**                               | Zwięzłe reguły dla agentów opartych o Gemini (podzbiór AGENTS.md)                          |
+| **AGENTS.md**                               | Reguły projektu dla wszystkich agentów AI (twarde reguły, konwencje, scenariusze)          |
+| **CLAUDE.md**                               | Dodatki specyficzne dla Claude Code, odsyłające do `AGENTS.md`                             |
+| **GEMINI.md**                               | Dodatki specyficzne dla Gemini, odsyłające do `AGENTS.md`                                  |
 | **CONTRIBUTING.md**                         | Przewodnik kontrybutora: setup, conventional commits, testy, flow PR                       |
 | **SECURITY.md**                             | Polityka zgłaszania podatności, wspierane wersje, model zagrożeń                           |
 | **CODE_OF_CONDUCT.md**                      | Contributor Covenant — oczekiwania co do zachowania w społeczności                         |

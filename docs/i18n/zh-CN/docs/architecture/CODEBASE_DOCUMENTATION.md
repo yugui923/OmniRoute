@@ -48,8 +48,8 @@ OmniRoute/
 ├── config/               运行时配置示例
 ├── images/               市场/截图资源
 ├── _ideia/, _references/, _mono_repo/, _tasks/   内部草稿/规划（不发布）
-├── AGENTS.md             面向 Claude Code 的仓库规则
-├── AGENTS.md             面向 Agent 的深层架构参考
+├── AGENTS.md             面向所有 AI 智能体的仓库规则
+├── CLAUDE.md             Claude Code 专属补充
 ├── package.json          v3.8.0，工作空间根目录
 └── tsconfig.json         路径别名 + 核心编译选项
 ```
@@ -794,5 +794,5 @@ bin/
 - [ELECTRON_GUIDE.md](../guides/ELECTRON_GUIDE.md)（如果存在）、[DOCKER_GUIDE.md](../guides/DOCKER_GUIDE.md)、[FLY_IO_DEPLOYMENT_GUIDE.md](../ops/FLY_IO_DEPLOYMENT_GUIDE.md)、[VM_DEPLOYMENT_GUIDE.md](../ops/VM_DEPLOYMENT_GUIDE.md)、[TERMUX_GUIDE.md](../guides/TERMUX_GUIDE.md)、[PWA_GUIDE.md](../guides/PWA_GUIDE.md) — 部署目标。
 - [TROUBLESHOOTING.md](../guides/TROUBLESHOOTING.md) — 常见运维问题。
 - [CONTRIBUTING.md](../../CONTRIBUTING.md) — 贡献者工作流。
-- [AGENTS.md](../../AGENTS.md) — 面向 Claude Code 的仓库规则（上述约定的权威来源）。
-- [AGENTS.md](../../AGENTS.md) — 面向 Agent 的深层架构参考。
+- [AGENTS.md](../../AGENTS.md) — 面向所有 AI 智能体的仓库规则（上述约定的权威来源）。
+- [CLAUDE.md](../../CLAUDE.md) — Claude Code 环境专属补充。

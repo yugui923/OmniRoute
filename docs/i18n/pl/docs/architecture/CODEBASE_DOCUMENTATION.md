@@ -62,8 +62,8 @@ OmniRoute/
 ├── config/               Przykłady konfiguracji runtime
 ├── images/               Zasoby marketingowe / zrzuty ekranu
 ├── _ideia/, _references/, _mono_repo/, _tasks/   Wewnętrzne notatki / planowanie (nie wydawane)
-├── AGENTS.md             Reguły repo dla Claude Code
-├── AGENTS.md             Głębsza referencja architektury dla agentów
+├── AGENTS.md             Reguły repo dla wszystkich agentów AI
+├── CLAUDE.md             Dodatki specyficzne dla Claude Code
 ├── package.json          v3.8.0, korzeń workspace
 └── tsconfig.json         Aliasy ścieżek + główne opcje kompilatora
 ```
@@ -851,6 +851,6 @@ Zob. [A2A-SERVER.md § Adding a New Skill](../frameworks/A2A-SERVER.md). Skille 
 - [ELECTRON_GUIDE.md](../guides/ELECTRON_GUIDE.md) (jeśli obecny), [DOCKER_GUIDE.md](../guides/DOCKER_GUIDE.md), [FLY_IO_DEPLOYMENT_GUIDE.md](../ops/FLY_IO_DEPLOYMENT_GUIDE.md), [VM_DEPLOYMENT_GUIDE.md](../ops/VM_DEPLOYMENT_GUIDE.md), [TERMUX_GUIDE.md](../guides/TERMUX_GUIDE.md), [PWA_GUIDE.md](../guides/PWA_GUIDE.md) — cele wdrożenia.
 - [TROUBLESHOOTING.md](../guides/TROUBLESHOOTING.md) — typowe problemy operacyjne.
 - [CONTRIBUTING.md](../../CONTRIBUTING.md) — workflow kontrybutora.
-- [AGENTS.md](../../AGENTS.md) — reguły repo dla Claude Code (źródło prawdy
+- [AGENTS.md](../../AGENTS.md) — reguły repo dla wszystkich agentów AI (źródło prawdy
   dla wielu powyższych konwencji).
-- [AGENTS.md](../../AGENTS.md) — głębsza referencja architektury używana przez agentów.
+- [CLAUDE.md](../../CLAUDE.md) — dodatki specyficzne dla środowiska Claude Code.

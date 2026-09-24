@@ -4,7 +4,7 @@
 
 ---
 
-> **适用范围：** 面向 Gemini 智能体的规则。Claude Code 相关规则见 `AGENTS.md`，其他 AI 助手相关规则见 `AGENTS.md`。
+> **适用范围：** 面向 Gemini 智能体的规则。所有智能体的通用规则见 `AGENTS.md`；Claude Code 专属补充见 `CLAUDE.md`。
 
 ## 1. 文件放置与组织
 
@@ -15,10 +15,10 @@
 
 - 配置文件（`vitest.config.ts`、`next.config.mjs`、`eslint.config.mjs`、`tsconfig*.json`、`playwright.config.ts`、`prettier.config.mjs`、`postcss.config.mjs`、`sonar-project.properties`、`fly.toml`、`docker-compose*.yml`、`Dockerfile`）
 - 依赖文件（`package.json`、`package-lock.json`）
-- 文档文件（`README.md`、`CHANGELOG.md`、`LICENSE`、`AGENTS.md`、`AGENTS.md`、`GEMINI.md`、`CONTRIBUTING.md`、`SECURITY.md`、`CODE_OF_CONDUCT.md`、`llm.txt`、`Tuto_Qdrant.md`）
+- 文档文件（`README.md`、`CHANGELOG.md`、`LICENSE`、`AGENTS.md`、`CLAUDE.md`、`GEMINI.md`、`CONTRIBUTING.md`、`SECURITY.md`、`CODE_OF_CONDUCT.md`、`llm.txt`、`Tuto_Qdrant.md`）
 - CI/CD 文件和忽略定义（`.gitignore`、`.dockerignore`、`.npmignore`、`.npmrc`、`.node-version`、`.nvmrc`、`.env.example`）
 
-创建_任何_验证测试或一次性逻辑脚本时，根据目标默认使用 `scripts/ad-hoc/` 或 `tests/unit/` 目录。不要污染根目录（`/`）。
+创建*任何*验证测试或一次性逻辑脚本时，根据目标默认使用 `scripts/ad-hoc/` 或 `tests/unit/` 目录。不要污染根目录（`/`）。
 
 ## 2. 硬规则（镜像自 `AGENTS.md`）
 

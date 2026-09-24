@@ -57,8 +57,8 @@ OmniRoute/
 ├── config/               執行時期設定範例
 ├── images/               行銷/截圖資源
 ├── _ideia/、_references/、_mono_repo/、_tasks/   內部草稿/規劃（不隨產品出貨）
-├── AGENTS.md             給 Claude Code 的儲存庫規則
-├── AGENTS.md             給代理程式的進階架構參考
+├── AGENTS.md             給所有 AI 代理程式的儲存庫規則
+├── CLAUDE.md             Claude Code 專屬補充
 ├── package.json          v3.8.0，workspace 根目錄
 └── tsconfig.json         路徑別名 + 核心編譯器選項
 ```
@@ -810,5 +810,5 @@ bin/
 - [ELECTRON_GUIDE.md](../guides/ELECTRON_GUIDE.md)（若存在）、[DOCKER_GUIDE.md](../guides/DOCKER_GUIDE.md)、[FLY_IO_DEPLOYMENT_GUIDE.md](../ops/FLY_IO_DEPLOYMENT_GUIDE.md)、[VM_DEPLOYMENT_GUIDE.md](../ops/VM_DEPLOYMENT_GUIDE.md)、[TERMUX_GUIDE.md](../guides/TERMUX_GUIDE.md)、[PWA_GUIDE.md](../guides/PWA_GUIDE.md) — 部署目標。
 - [TROUBLESHOOTING.md](../guides/TROUBLESHOOTING.md) — 常見運維問題。
 - [CONTRIBUTING.md](../../CONTRIBUTING.md) — 貢獻者工作流程。
-- [AGENTS.md](../../AGENTS.md) — 給 Claude Code 的儲存庫規則（上述許多慣例的真實來源）。
-- [AGENTS.md](../../AGENTS.md) — 代理程式使用的進階架構參考。
+- [AGENTS.md](../../AGENTS.md) — 給所有 AI 代理程式的儲存庫規則（上述許多慣例的真實來源）。
+- [CLAUDE.md](../../CLAUDE.md) — Claude Code 環境專屬補充。

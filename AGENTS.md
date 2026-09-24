@@ -1,9 +1,9 @@
 # OmniRoute agent guide
 
 > **Single source of truth.** This file holds ALL project rules, conventions, architecture notes
-> and Hard Rules for every AI coding agent working in this repository. `GEMINI.md` only adds
-> harness-specific deltas and points back here. When a rule needs to change, change it HERE —
-> never re-fork it into a harness-specific file.
+> and Hard Rules for every AI coding agent working in this repository. `CLAUDE.md` and `GEMINI.md`
+> only add harness-specific deltas and point back here. When a rule needs to change, change it HERE
+> — never re-fork it into a harness-specific file.
 
 ## Quick Start
 
@@ -55,7 +55,7 @@ Repository map and Reference Documentation sections below.
 | Translators   | `open-sse/translator/`  | Format conversion (OpenAI↔Claude↔Gemini)                                                                                                                                  |
 | Transformer   | `open-sse/transformer/` | Responses API ↔ Chat Completions                                                                                                                                          |
 | Services      | `open-sse/services/`    | Combo routing, rate limits, caching, etc                                                                                                                                  |
-| Database      | `src/lib/db/`           | SQLite domain modules (170 migrations)                                                                                                                                    |
+| Database      | `src/lib/db/`           | SQLite domain modules (169 migrations)                                                                                                                                    |
 | Domain/Policy | `src/domain/`           | Policy engine, cost rules, fallback logic                                                                                                                                 |
 | MCP Server    | `open-sse/mcp-server/`  | 110 tools (45 canonical + memory/skill/GitHub/pool/gamification/plugin/Notion/Obsidian/local-corpus/RTK modules), 3 transports (stdio / SSE / Streamable HTTP), 33 scopes |
 | A2A Server    | `src/lib/a2a/`          | JSON-RPC 2.0 agent protocol                                                                                                                                               |
@@ -269,7 +269,7 @@ Read the nearest `AGENTS.md` and the linked deep-dive before making a non-trivia
 
 - Configuration files (`vitest.config.ts`, `next.config.mjs`, `eslint.config.mjs`, `tsconfig*.json`, `playwright.config.ts`, `prettier.config.mjs`, `postcss.config.mjs`, `sonar-project.properties`, `fly.toml`, `docker-compose*.yml`, `Dockerfile`)
 - Dependency files (`package.json`, `package-lock.json`)
-- Documentation files (`README.md`, `CHANGELOG.md`, `ROADMAP.md`, `LICENSE`, `AGENTS.md`, `GEMINI.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `llm.txt`)
+- Documentation files (`README.md`, `CHANGELOG.md`, `ROADMAP.md`, `LICENSE`, `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `llm.txt`)
 - CI/CD files and ignore definitions (`.gitignore`, `.dockerignore`, `.npmignore`, `.npmrc`, `.node-version`, `.nvmrc`, `.env.example`)
 
 When creating _any_ validation tests or one-off logic scripts, default to `scripts/ad-hoc/` or `tests/unit/` according to your goals. Do not pollute the `/` root context.
@@ -498,7 +498,7 @@ Why this matters: fixing bug A while opening bug B is worse than not fixing at a
 - Do not close a contributor pull request after using its code; merge it through GitHub so
   the contributor receives credit.
 - **Never merge a PR that touches an agent-instruction surface without explicit operator
-  approval** — `AGENTS.md`, `GEMINI.md`, `llm.txt` (+ mirrors) and
+  approval** — `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `llm.txt` (+ mirrors) and
   `skills/**/SKILL.md` are executed as authority by every AI session; a merged instruction
   compromises every future agent run. Check with `gh pr diff <N> --name-only` before any
   merge. Incident record: PR #11770 (2026-09-01) told agents to execute a third-party
